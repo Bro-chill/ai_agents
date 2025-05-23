@@ -10,6 +10,8 @@ Fundamental structure to build an agent consist of 3 features:
 - **Agent** : an AI where we can pass specific model,prompt,state,dependencies and etc.
 - **Tool** : a function that allowed agent to use external systems to perform specialized tasks.
 
+---
+
 ### Graph
 
 Fundamental structure to build graph
@@ -18,9 +20,12 @@ Fundamental structure to build graph
 - **Node** : a "node" is a function that represents a single step or action in AI workflow.
 - **Graph** : orchestrate the flow from 1 node to the next.
 
+---
+
 ### How to start from scratch
 
 1. Create virtual environment and activate.
+
 **Windows**
 ```bash
 python -m venv <folder_name>
@@ -40,7 +45,7 @@ pip install pydantic pydantic-ai langgraph
 5. Create agents folder for our `research_agent.py` and `summary_agent.py`
 6. Create `agents_graph.py` for orchestration
 7. Create `langgraph.json` to set the location of our `agents_graph.py` location
-8. Test the Agentic AI
+8. Test the Agentic AI at langgraph studio
 ```bash
 langgraph dev
 ```
