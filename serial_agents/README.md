@@ -1,7 +1,7 @@
 ## Serial Agent Flow
 A demonstration of serial agent architecture using Pydantic-AI to build each agent and Langgraph to orchestrate the workflow.
 
-![Serial Flow Graph][<graph.png>]
+![Serial Flow Graph](graph.png)
 
 ### Agents
 
