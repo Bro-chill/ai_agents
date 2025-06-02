@@ -1,1 +1,1 @@
-### This folder is dedicated to projects handling multiple agent
+### This folder is dedicated to projects related to agentic AI
