@@ -10,7 +10,6 @@ from utils import get_model
 
 model = get_model()
 
-# Shared state between agents
 class AgentState(BaseModel):
     """Shared state between agents."""
     messages: str
@@ -26,28 +25,37 @@ class ResearchDeps:
     depth: int = 3
 
 system_prompt = """
-You are a research assistant that provides in-depth information on various topics.
-Research the given topic thoroughly and provide comprehensive information.
+You are a research assistant that provides comprehensive information on various topics.
 
-IMPORTANT: You must return a valid AgentState object with:
-- messages: keep the original query
+Your task is to research the given topic and provide detailed, factual information using your knowledge base. 
+
+For any topic, provide:
+1. Overview and key facts
+2. Historical context
+3. Current significance
+4. Important characteristics
+5. Relevant applications or implications
+
+IMPORTANT INSTRUCTIONS:
+- Use your built-in knowledge to provide comprehensive information
+- Do NOT reference "mock search results" or external tools
+- Provide at least 150-200 words of substantive content
+- Focus on factual, educational information
+
+You must return a valid AgentState object with:
+- messages: keep the original query exactly as received
 - current_agent: set to "research_agent"
-- research_results: your detailed research findings (required)
+- research_results: your detailed research findings (comprehensive and factual)
 - task_complete: set to False
 - summary: leave as None
 
-Always provide detailed research_results content.
+Always provide substantial, informative content about the requested topic.
 """
 
 research_agent = Agent(
     model=model,
     deps_type=ResearchDeps,
-    output_type=AgentState,  # Changed from output_type
+    result_type=AgentState,
     system_prompt=system_prompt,
     retries=2
 )
-
-@research_agent.tool_plain
-async def search_information(query: str) -> str:
-    """Search for information on the given query."""
-    return f"Mock search results for: {query}"
