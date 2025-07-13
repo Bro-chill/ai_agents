@@ -45,7 +45,7 @@ TAVILY_API_KEY=
   * InMemoryStore is a concrete implementation of BaseStore
   * Stores data in RAM (memory) during the application session
 
-![Graph](.module-03\module-3.png)
+![Graph](./module-03/module-3.png)
 ```
 📁  module-03
 ├── config.py          # Configuration and LLM setup
@@ -66,7 +66,7 @@ TAVILY_API_KEY=
   * Section Writing → Convert interviews to report sections
   * Report Assembly → Combine into final formatted report
 
-![Graph](.module-04\module-4.png)
+![Graph](./module-04/module-4.png)
 ```
 📁  module-04
 ├── __init__.py
