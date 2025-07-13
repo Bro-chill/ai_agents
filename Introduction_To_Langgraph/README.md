@@ -1,5 +1,12 @@
 **Full Credit To LangChain**: https://academy.langchain.com/
 
+```
+# Setup your .env
+GEMINI_KEY=
+MODEL_CHOICE=gemini-2.0-flash
+
+TAVILY_API_KEY=
+```
 ---
 ### Module-01
 **Fundamental Chatbot Agent with tool-chaining using Langchain**
@@ -38,7 +45,7 @@
   * InMemoryStore is a concrete implementation of BaseStore
   * Stores data in RAM (memory) during the application session
 
-![Graph](module-03\module-3.png)
+![Graph](.module-03\module-3.png)
 ```
 📁  module-03
 ├── config.py          # Configuration and LLM setup
@@ -59,7 +66,7 @@
   * Section Writing → Convert interviews to report sections
   * Report Assembly → Combine into final formatted report
 
-![Graph](module-04\module-4.png)
+![Graph](.module-04\module-4.png)
 ```
 📁  module-04
 ├── __init__.py
